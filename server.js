@@ -5,7 +5,9 @@ const routes = require("./routes")
 
 /*Chamar a função pra dentro do servidor*/
 
-const server = express()
+const server = express();
+
+server.use(express.urlencoded({ extended: true }))
 
 
 
