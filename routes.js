@@ -16,8 +16,24 @@ routes.get('/instructors/create', function (req, res) {
 
 routes.post("/instructors", function (req, res) {
     //req.query
+
+
     //requ.body
-    return res.send(req.body)
+    // { "avatar_url": "http://google.com", "name": "Denis Jesus", "birth": "2021-05-03", "gender": "M", "services": "Teste" }
+
+
+    //["avatar_url","name","birth","gender","services"]
+    const keys = Object.keys(req.body)
+
+
+    for (key of keys) {
+        //requ.body.key == ""
+        if (req.body[key] == "")
+            return res.send("Please, fill all fields!")
+    }
+
+    return res.send(req.body);
+
 });
 
 routes.get('/members', function (req, res) {
