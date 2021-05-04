@@ -1,0 +1,25 @@
+{
+  "instructors": [
+    {
+      "avatar_url": "http://google.com",
+      "name": "Denis Jesus",
+      "birth": "2021-05-04",
+      "gender": "M",
+      "services": "Teste"
+    },
+    {
+      "avatar_url": "http://fundep.com",
+      "name": "Denis",
+      "birth": "2021-05-05",
+      "gender": "M",
+      "services": "Teste Fundep"
+    },
+    {
+      "avatar_url": "http://fundep.com",
+      "name": "Batista",
+      "birth": "2021-05-06",
+      "gender": "M",
+      "services": "Teste Fundep"
+    }
+  ]
+}
