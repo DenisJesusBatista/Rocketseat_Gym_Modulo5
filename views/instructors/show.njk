@@ -13,28 +13,33 @@
 
             <div class="item">
                 <div>Idade</div>
-                <div>{{ instructor.birth }}</div>
+                <div>{{ instructor.age }}</div>
             </div>
 
             <div class="item">
                 <div>Sexo</div>
-                <div>{{instructor.gender}}}</div>
+                {# If tradicional #}
+                <div>{{ "Masculino" if instructor.gender == "M" else "Feminino" }}</div>
+
+                {# If ternário #}
+                {# <div>{{  var message = instructor.gender == "M" ? "Masculino" : "Feminino" }}</div> #}
+
             </div>
 
             <div class="item">
                 <div>Acompanhamento</div>
                 <div>
 
-                    {%for service in services%}}
-                        <span>service</span>
-                        {%endfor%}
-                    </div>
+                    {% for service in instructor.services %}
+                        <span>{{service}}</span>
+                    {% endfor %}
                 </div>
-                <div class="item">
-                    <div>Desde</div>
-                    <div>{{ instructor.created_at }}</div>
-                </div>
+            </div>
+            <div class="item">
+                <div>Desde</div>
+                <div>{{ instructor.created_at }}</div>
+            </div>
 
-            </section>
-        </div>
-        <{% endblock content%}
+        </section>
+    </div>
+    <{% endblock content%}
