@@ -1,18 +1,20 @@
 const fs = require('fs');
-const data = require("./data.json")
+const data = require("./data.json");
+const { age } = require("./utils");
 
 exports.show = function (req, res) {
     const { id } = req.params
 
     const foundInstructor = data.instructors.find(function (instructor) {
-        return instructor.id == id
+        return id == instructor.id
     });
 
     if (!foundInstructor) return res.send("Instructors not found!")
 
+
     const instructor = {
         ...foundInstructor,
-        age: "",
+        age: age(foundInstructor.birth),
         services: foundInstructor.services.split(","),
         create_at: ""
     }
