@@ -12,11 +12,13 @@ exports.show = function (req, res) {
     if (!foundInstructor) return res.send("Instructors not found!")
 
 
+
+
     const instructor = {
         ...foundInstructor,
         age: age(foundInstructor.birth),
         services: foundInstructor.services.split(","),
-        create_at: ""
+        create_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.create_at),
     }
 
     return res.render("instructors/show", { instructor })
