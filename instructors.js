@@ -1,3 +1,4 @@
+const { name } = require('browser-sync');
 const fs = require('fs');
 const data = require("./data.json");
 const { age } = require("./utils");
@@ -18,7 +19,7 @@ exports.show = function (req, res) {
         ...foundInstructor,
         age: age(foundInstructor.birth),
         services: foundInstructor.services.split(","),
-        create_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.create_at),
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.create_at),
     }
 
     return res.render("instructors/show", { instructor })
@@ -27,37 +28,42 @@ exports.show = function (req, res) {
 
 //create
 exports.post = function (req, res) {
-    //req.query
 
-
-    //requ.body
-    // { "avatar_url": "http://google.com", "name": "Denis Jesus", "birth": "2021-05-03", "gender": "M", "services": "Teste" }
-
-
-    //["avatar_url","name","birth","gender","services"]
     const keys = Object.keys(req.body)
 
 
     for (key of keys) {
         //requ.body.key == ""
-        if (req.body[key] == "")
+        if (req.body[key] == "") {
             return res.send("Please, fill all fields!")
+        }
     }
 
-    req.body.birth = Date.parse(req.body.birth);
+    let { avatar_url, birth, name, services, gender } = req.body
 
-    req.body.create_at = Date.now();
+    birth = Date.parse(birth);
+    const created_at = Date.now();
+    const id = Number(data.instructors.length + 1);
 
 
-    data.instructors.push(req.body)
+    data.instructors.push({
+        id,
+        name,
+        avatar_url,
+        birth,
+        gender,
+        services,
+        created_at,
+    });
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
         if (err) return res.send("Write file error!");
 
-        return res.redirect("instructors")
+        return res.redirect("/instructors")
 
     });
 
+    // Imprime no browers
     // return res.send(req.body);
 
 }
