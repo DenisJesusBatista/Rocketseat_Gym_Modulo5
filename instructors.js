@@ -1,7 +1,7 @@
 const { name } = require('browser-sync');
 const fs = require('fs');
 const data = require("./data.json");
-const { age } = require("./utils");
+const { age, date } = require("./utils");
 
 
 
@@ -86,6 +86,18 @@ exports.edit = function (req, res) {
 
     if (!foundInstructor) return res.send("Instructors not found!")
 
+    //Formato que espera a data nascimento 
+    //instructor.birth = 473385600000
+    //date(instructor.birth)
+    //return yyyy-mm-dd
 
-    return res.render('instructors/edit', { instructor: foundInstructor })
+
+    const instructor = {
+        ...foundInstructor,
+        birth: //"2020-02-01"
+            date(foundInstructor.birth) // yyyy-m-d
+    }
+
+
+    return res.render('instructors/edit', { instructor })
 }
