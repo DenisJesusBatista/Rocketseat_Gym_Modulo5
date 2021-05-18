@@ -1,5 +1,6 @@
 const { name } = require('browser-sync');
 const fs = require('fs');
+const { Index } = require('typeorm');
 const data = require("./data.json");
 const { age, date } = require("./utils");
 
@@ -100,4 +101,38 @@ exports.edit = function (req, res) {
 
 
     return res.render('instructors/edit', { instructor })
+}
+
+
+//put
+
+exports.put = function (req, res) {
+    const { id } = req.body
+    let index = 0
+
+
+    const foundInstructor = data.instructors.find(function (instructor, foundindex) {
+        if (id == instructor.id) {
+            index = foundindex
+            return true
+        }
+    });
+
+    if (!foundInstructor) return res.send("Instructors not found!")
+
+    const instructor = {
+        ...foundInstructor,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+
+
+    data.instructors[Index] = instructor
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) return res.send("Write error!")
+
+        return res.redirect(`/instructors/${id}`)
+    })
+
 }
