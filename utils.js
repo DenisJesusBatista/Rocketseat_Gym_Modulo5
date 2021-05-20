@@ -26,6 +26,7 @@ module.exports = {
         const day = `0${date.getUTCDate()}`.slice(-2)
 
         //return yyyy-mm-dd
-        return console.log(`${year}-${month}-${day}`)
+        // return console.log(`${year}-${month}-${day}`)
+        return `${year}-${month}-${day}`
     }
 }
