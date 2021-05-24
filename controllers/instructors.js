@@ -1,16 +1,12 @@
 const { name } = require('browser-sync');
 const fs = require('fs');
 const { Index } = require('typeorm');
-const data = require("./data.json");
-const { age, date } = require("./utils");
+const data = require("../data.json");
+const { age, date } = require("../utils");
 
-exports.index =
-    function (req, res) {
-        return res.render("instructors/index", { instructors: data.instructors })
-    }
-
-
-
+exports.index = function (req, res) {
+    return res.render("instructors/index", { instructors: data.instructors })
+}
 
 //show
 exports.show = function (req, res) {
@@ -36,6 +32,9 @@ exports.show = function (req, res) {
 
 }
 
+exports.create = function (req, res) {
+    return res.render("Instructors/create")
+}
 
 //create
 exports.post = function (req, res) {
@@ -78,7 +77,6 @@ exports.post = function (req, res) {
     // return res.send(req.body);
 
 }
-
 
 //edit
 

@@ -1,9 +1,10 @@
 {
+  "members": [],
   "instructors": [
     {
       "id": 1,
       "name": "Denis ",
-      "avatar_url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3ltfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "avatar_url": "//www.devmedia.com.br/imagens/fotoscolunistas/510911_20200427123927.jpg",
       "birth": 485740800000,
       "gender": "M",
       "services": "musculação, crossfit",
