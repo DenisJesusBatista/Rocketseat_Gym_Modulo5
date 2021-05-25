@@ -30,7 +30,7 @@ exports.show = function (req, res) {
 }
 
 exports.create = function (req, res) {
-    return res.render("member/create")
+    return res.render("members/create")
 }
 
 exports.post = function (req, res) {
