@@ -1,5 +1,17 @@
 {
-  "members": [],
+  "members": [
+    {
+      "avatar_url": "http://google.com",
+      "name": "Denis de Jesus Batista",
+      "email": "denisbatista@fundep.com.br",
+      "birth": 485740800000,
+      "gender": "M",
+      "blood": "O1",
+      "weight": "85",
+      "height": "1",
+      "id": 1
+    }
+  ],
   "instructors": [
     {
       "id": 1,
