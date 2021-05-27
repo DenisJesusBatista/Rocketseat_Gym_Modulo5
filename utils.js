@@ -27,6 +27,12 @@ module.exports = {
 
         //return yyyy-mm-dd
         // return console.log(`${year}-${month}-${day}`)
-        return `${year}-${month}-${day}`
+        return {
+            day,
+            month,
+            year,
+            iso: `${year}-${month}-${day}`,
+            birthDay: `${day}/${month}`
+        } //retornar no formato iso
     }
 }

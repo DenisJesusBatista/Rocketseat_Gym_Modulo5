@@ -1,12 +1,12 @@
 {
   "members": [
     {
-      "avatar_url": "http://google.com",
+      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGd5bXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "name": "Denis de Jesus Batista",
       "email": "denisbatista@fundep.com.br",
       "birth": 485740800000,
       "gender": "M",
-      "blood": "O1",
+      "blood": "O-",
       "weight": "85",
       "height": "1",
       "id": 1
@@ -16,7 +16,7 @@
     {
       "id": 1,
       "name": "Denis ",
-      "avatar_url": "//www.devmedia.com.br/imagens/fotoscolunistas/510911_20200427123927.jpg",
+      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGd5bXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "birth": 485740800000,
       "gender": "M",
       "services": "musculação, crossfit",

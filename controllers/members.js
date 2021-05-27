@@ -2,31 +2,10 @@ const { name } = require('browser-sync');
 const fs = require('fs');
 const { Index } = require('typeorm');
 const data = require("../data.json");
-const { age, date } = require("../utils");
+const { date } = require("../utils");
 
 exports.index = function (req, res) {
     return res.render("members/index", { members: data.members })
-}
-
-exports.show = function (req, res) {
-    const { id } = req.params
-
-    const foundMember = data.members.find(function (member) {
-        return id == member.id
-    });
-
-    if (!foundMember) return res.send("Members not found!")
-
-
-
-
-    const member = {
-        ...foundMember,
-        age: age(foundMember.birth)
-    }
-
-    return res.render("members/show", { member })
-
 }
 
 exports.create = function (req, res) {
@@ -69,6 +48,26 @@ exports.post = function (req, res) {
 
     // Imprime no browers
     // return res.send(req.body);
+
+}
+
+exports.show = function (req, res) {
+    const { id } = req.params
+
+    const foundMember = data.members.find(function (member) {
+        return id == member.id
+    });
+
+    if (!foundMember) return res.send("Members not found!")
+
+
+    const member = {
+        ...foundMember,
+        birth: //"2020-02-01"
+            date(foundMember.birth).birthDay // yyyy-m-d
+    }
+
+    return res.render("members/show", { member })
 
 }
 
