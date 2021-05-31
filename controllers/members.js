@@ -91,7 +91,7 @@ exports.edit = function (req, res) {
     const member = {
         ...foundMember,
         birth: //"2020-02-01"
-            date(foundMember.birth) // yyyy-m-d
+            date(foundMember.birth).iso // yyyy-m-d
     }
 
 
