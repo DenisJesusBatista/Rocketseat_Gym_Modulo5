@@ -1,0 +1,22 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "name": "Denis ",
+      "avatar_url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3ltfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "birth": 485740800000,
+      "gender": "M",
+      "services": "musculação, crossfit",
+      "created_at": 1621547788587
+    },
+    {
+      "id": 2,
+      "name": "Gislaine Graciele",
+      "avatar_url": "https://images.unsplash.com/photo-1576678927484-cc907957088c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z3ltfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "birth": 739670400000,
+      "gender": "F",
+      "services": "Dança, aeróbica e musculação",
+      "created_at": 1621632057009
+    }
+  ]
+}
