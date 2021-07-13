@@ -70,6 +70,7 @@ module.exports = {
         })
 
     },
+    /*Teste*/
 
     delete(req, res) {
         Instructor.delete(req.body.id, function () {
