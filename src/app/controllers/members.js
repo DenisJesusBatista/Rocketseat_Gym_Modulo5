@@ -5,7 +5,7 @@ const Member = require('../models/member')
 module.exports = {
     index(req, res) {
 
-        member.all(function (members) {
+        Member.all(function (members) {
             return res.render("members/index", { members })
 
         })
@@ -27,13 +27,13 @@ module.exports = {
             }
         }
 
-        member.create(req.body, function (member) {
+        Member.create(req.body, function (member) {
             return res.redirect(`/members/${member.id}`)
         })
 
     },
     show(req, res) {
-        member.find(req.params.id, function (member) {
+        Member.find(req.params.id, function (member) {
             if (!member) return res.send("member not found!")
 
             member.birth = age(member.birth).birthDay
@@ -44,7 +44,7 @@ module.exports = {
     },
 
     edit(req, res) {
-        member.find(req.params.id, function (member) {
+        Member.find(req.params.id, function (member) {
             if (!member) return res.send("member not found!")
 
             member.birth = age(member.birth).iso
@@ -64,7 +64,7 @@ module.exports = {
             }
         }
 
-        member.update(req.body, function () {
+        Member.update(req.body, function () {
             return res.redirect(`/members/${req.body.id}`)
         })
 
@@ -72,7 +72,7 @@ module.exports = {
     /*Teste*/
 
     delete(req, res) {
-        member.delete(req.body.id, function () {
+        Member.delete(req.body.id, function () {
             return res.redirect(`/members`)
         })
     },
