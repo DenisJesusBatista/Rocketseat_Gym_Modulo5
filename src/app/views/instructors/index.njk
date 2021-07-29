@@ -2,6 +2,7 @@
 
 {% block content %}
     <div class="card table-container">
+    
     <div class="header">
         <a class="button" href="/instructors/create">Novo</a>
         <form action="/instructors" method="GET">
@@ -45,10 +46,10 @@
 
 
         <div class="pagination"
-            data-page=15
-            data-total=20
-        >
-
-        <div/>
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+            
+        ><div/>
     </div>
-    {% endblock content%}
+    {% endblock content %}
